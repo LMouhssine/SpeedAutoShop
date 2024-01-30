@@ -3,13 +3,13 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
---? Database: `shop_db`
+-- Database: `shop_db`
 --
 
---? --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
---! Table structure for table `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -18,10 +18,10 @@ CREATE TABLE `admins` (
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---? --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
---! Table structure for table `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -33,10 +33,10 @@ CREATE TABLE `cart` (
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---? --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
---! Table structure for table `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -48,10 +48,10 @@ CREATE TABLE `messages` (
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---? --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
---! Table structure for table `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -64,14 +64,15 @@ CREATE TABLE `orders` (
   `address` varchar(500) NOT NULL,
   `total_products` varchar(1000) NOT NULL,
   `total_price` int(100) NOT NULL,
-  `placed_on` date NOT NULL DEFAULT current_timestamp(),
+  -- `placed_on` date NOT NULL DEFAULT current_timestamp(),
+  `placed_on` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---? --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
---! Table structure for table `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -86,10 +87,10 @@ CREATE TABLE `products` (
   `video_01` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---? --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
---! Table structure for table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -99,10 +100,10 @@ CREATE TABLE `users` (
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---? --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
---! Table structure for table `wishlist`
+-- Table structure for table `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -115,93 +116,93 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---? Indexes for dumped tables
+-- Indexes for dumped tables
 --
 
 --
---? Indexes for table `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
---? Indexes for table `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
---? Indexes for table `messages`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
---? Indexes for table `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
---? Indexes for table `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
---? Indexes for table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
---? Indexes for table `wishlist`
+-- Indexes for table `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`id`);
 
 --
---? AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
---? AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
---? AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
---? AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
---? AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
---? AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
---? AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
---? AUTO_INCREMENT for table `wishlist`
+-- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
